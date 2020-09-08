@@ -22,7 +22,7 @@ jobs:
         content-filepath: ./.github/ISSUE_TEMPLATE/issue.md
 
     - name: Create or Update Project Card
-      if: ${{ steps.ciff.outputs.outcome == 'success' }}
+      if: ${{ steps.ciff.outcome == 'success' }}
       uses: peter-evans/create-or-update-project-card@v1
       with:
         project-number: '1'
