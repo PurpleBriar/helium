@@ -11,8 +11,8 @@ jobs:
       id: ciff
       uses: peter-evans/create-issue-from-file@v2
       with:
-        title: An example issue
-        content-filepath: ./CHANGELOG.md
+        title: Remove dead links from repository
+        content-filepath: ./.github/ISSUE_TEMPLATE/issue.md
 
     - name: Create or Update Project Card
       uses: peter-evans/create-or-update-project-card@v1
