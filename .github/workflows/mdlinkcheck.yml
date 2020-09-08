@@ -21,8 +21,8 @@ jobs:
         title: Remove dead links from repository
         content-filepath: ./.github/ISSUE_TEMPLATE/issue.md
 
-    - name: ${{ steps.ciff.outcome }}
-      if: ${{ success() }}
+    - name: Create Project Card
+      if: ${{ failure() }}
       uses: peter-evans/create-or-update-project-card@v1
       with:
         project-number: '1'
