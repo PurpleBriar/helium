@@ -17,5 +17,5 @@ jobs:
       if: ${{ failure() }}
       uses: peter-evans/create-or-update-project-card@v1
       with:
-        project-name: 'retaildevcrews/helium'
-        column-name: 'Triage'
+        project-name: 'helium'
+        column-name: 'To do'
