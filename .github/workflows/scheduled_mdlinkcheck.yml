@@ -42,6 +42,7 @@ jobs:
       - shell: bash
         run: |
           sudo npm install -g markdown-link-check
+        run: |
           sudo find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
           
       - name: Upload log from markdown-link-check
