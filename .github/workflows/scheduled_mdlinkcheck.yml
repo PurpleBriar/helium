@@ -31,4 +31,21 @@ jobs:
         project-number: '1'
         column-name: 'To do'
         issue-number: ${{ steps.ciff.outputs.issue-number }}
+
+  local_run:
+    
+    name: run locally
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          npm install -g markdown-link-check
+          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
+          
+      - name: Upload log from markdown-link-check
+        uses: actions/upload-artifact@v2
+        with:
+          name: run_log
+          path: out.txt
+
     
