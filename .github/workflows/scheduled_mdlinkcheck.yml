@@ -39,7 +39,6 @@ jobs:
     - name: Print the final result
       shell: bash
       run: |
-        value=`cat math-homework.txt`
         echo The result is ${{ steps.current_run.outputs }}
 
   local_install:
