@@ -39,10 +39,13 @@ jobs:
     name: run locally
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - name: install md
+        shell: bash
         run: |
           sudo npm install -g markdown-link-check
-      - shell: bash
+      - name: search
+        needs: install md
+        shell: bash
         run: |
           find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
           
