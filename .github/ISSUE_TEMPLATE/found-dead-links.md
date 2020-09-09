@@ -1,7 +1,7 @@
 ---
-name: Issue
+name: Found Dead Links
 about: Dead link
-title: 'Dead link(s) found in repository'
+title: 'Dead link(s) found in markdown files'
 labels: 'Documentation'
 assignees: ''
 
