@@ -40,10 +40,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
-        run: |
-          sudo npm install -g markdown-link-check
-        run: |
-          sudo find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
+        - name: install checker
+          run: |
+            sudo npm install -g markdown-link-check
+        - name: run checker
+          run: |
+            sudo find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
           
       - name: Upload log from markdown-link-check
         uses: actions/upload-artifact@v2
