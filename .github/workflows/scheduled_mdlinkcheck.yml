@@ -42,12 +42,12 @@ jobs:
         echo The result is ${{ steps.current_run.outputs }}
 
   local_install:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu--20.04
     steps:
-      - id: li1
-        run: sudo npm install -g markdown-link-check
-      - id: li2
-        run: find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
+      - shell: bash
+        run: |
+          sudo npm install -g markdown-link-check
+          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
 
   local_run:
     runs-on: ubuntu-latest
