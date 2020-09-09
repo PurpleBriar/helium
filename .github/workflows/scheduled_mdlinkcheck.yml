@@ -42,7 +42,7 @@ jobs:
         echo The result is ${{ steps.current_run.outputs }}
 
   local_install:
-    runs-on: ubuntu--20.04
+    runs-on: ubuntu-20.04
     steps:
       - shell: bash
         run: |
