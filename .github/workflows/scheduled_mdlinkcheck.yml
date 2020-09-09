@@ -42,7 +42,7 @@ jobs:
       - shell: bash
         run: |
           sudo npm install -g markdown-link-check
-          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
+          sudo find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
           
       - name: Upload log from markdown-link-check
         uses: actions/upload-artifact@v2
