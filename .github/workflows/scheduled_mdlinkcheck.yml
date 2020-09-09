@@ -44,10 +44,10 @@ jobs:
   local_install:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
-        run: |
-          sudo npm install -g markdown-link-check
-          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
+      - id: li1
+        run: sudo npm install -g markdown-link-check
+      - id: li2
+        run: find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
 
   local_run:
     runs-on: ubuntu-latest
