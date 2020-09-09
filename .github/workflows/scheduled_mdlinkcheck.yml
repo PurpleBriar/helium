@@ -47,7 +47,7 @@ jobs:
       - shell: bash
         run: |
           sudo npm install -g markdown-link-check
-          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
+          find . -name \*.md -exec /usr/local/bin/markdown-link-check -c mlc_config.json {} \; > out.txt
 
   local_run:
     runs-on: ubuntu-latest
