@@ -34,18 +34,18 @@ jobs:
         column-name: 'To do'
         issue-number: ${{ steps.ciff.outputs.issue-number }}
 
-  local_run:
-    
-    name: run locally
+  local_install:
     runs-on: ubuntu-latest
     steps:
-      - name: install md
-        shell: bash
+      - shell: bash
         run: |
           sudo npm install -g markdown-link-check
-      - name: search
-        needs: install md
-        shell: bash
+
+  local_run:
+    runs-on: ubuntu-latest
+    needs: local_install
+    steps:
+      - shell: bash
         run: |
           find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; > out.txt
           
