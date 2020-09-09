@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    - name: Run Checker
+      id: current_run
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
         use-quiet-mode: 'yes'
         use-verbose-mode: 'yes'
@@ -33,6 +35,12 @@ jobs:
         project-number: '1'
         column-name: 'To do'
         issue-number: ${{ steps.ciff.outputs.issue-number }}
+
+    - name: Print the final result
+      shell: bash
+      run: |
+        value=`cat math-homework.txt`
+        echo The result is ${{ steps.current_run.outputs }}
 
   local_install:
     runs-on: ubuntu-latest
