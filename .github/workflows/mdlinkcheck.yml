@@ -19,7 +19,7 @@ jobs:
       uses: peter-evans/create-issue-from-file@v2
       with:
         title: Remove dead links from repository
-        content-filepath: ./.github/ISSUE_TEMPLATE/dead-link.md
+        content-filepath: ./.github/ISSUE_TEMPLATE/found-dead-links.md
 
     - name: Create Project Card
       if: ${{ failure() }}
