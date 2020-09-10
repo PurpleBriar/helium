@@ -50,7 +50,7 @@ jobs:
       
       - shell: bash
         run: |
-          find . -name \*.md -exec /usr/local/bin/markdown-link-check -c mlc_config.json {} \; > out.txt
+          sudo find . -name \*.md -exec /usr/local/bin/markdown-link-check -c mlc_config.json {} \; > out.txt
 
   local_run:
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
     steps:
       - shell: bash
         run: |
-          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \;
+          find . -name \*.md -exec markdown-link-check -c mlc_config.json {} \; 
           
       - name: Upload log from markdown-link-check
         uses: actions/upload-artifact@v2
