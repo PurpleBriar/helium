@@ -18,7 +18,7 @@ This is a Web API reference application designed to "fork and code" with the fol
 
 ## Documentation
 
-### [AKS Setup](aks/README5.md)
+### [AKS Setup](aks/README.md)
 
 ### [Alerts Setup](AlertSetup.md)
 
