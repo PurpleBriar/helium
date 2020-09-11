@@ -1,7 +1,6 @@
 name: Check Markdown links
 
 on: 
-  push:
 
   schedule:
   # Run on the 1st and 15th of every month at 2:00 AM 
